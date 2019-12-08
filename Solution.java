@@ -2,7 +2,7 @@ import java.lang.Math;
 
 public class Solution {
 
-	// exercise 1
+	// challenge 1
 	public int levenshtein(String token1, String token2) {
 		final int lenToken1 = token1.length();
 		final int lenToken2 = token2.length();
@@ -41,7 +41,7 @@ public class Solution {
 		return column[lenToken1];
 	}
 
-	// exercise 3
+	// challenge 3
 	public int levenshtein(String token1, String token2, int maxDist) {
 		final int lenToken1 = token1.length();
 		final int lenToken2 = token2.length();

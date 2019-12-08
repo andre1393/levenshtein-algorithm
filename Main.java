@@ -6,20 +6,20 @@ public class Main {
 	public static void main(String[] args) {
 		final int maxDistance = 2;
 
-		System.out.println("Exercises 1/2: \n");
+		System.out.println("challenges 1/2: \n");
 		runLevenshteinTests();
 		System.out.println("-----------------------------------------");
-		System.out.println("Exercises 3/4: \n");
+		System.out.println("challenges 3/4: \n");
 		runLevenshteinWithEarlyTests(maxDistance);
 		System.out.println("-----------------------------------------");
-		System.out.println("Exercise 5: \n");
+		System.out.println("challenge 5: \n");
 		long test1 = runLevenshteinPerformanceTests(10000);
 		System.out.println("\n");
 		long test2 = runLevenshteinWithEarlyExitPerformanceTests(10000, maxDistance);
 		System.out.printf("\nLeveshtein with early exit was %d nano seconds faster than the regular one.\n", test1-test2);
 	}
 
-	// exercise 2
+	// challenge 2
 	public static void runLevenshteinTests() {
 		final int n = 4;
 
@@ -34,7 +34,7 @@ public class Main {
 		}
 	}
 
-	// exercise 4
+	// challenge 4
 	public static void runLevenshteinWithEarlyTests(int maxDistance) {
 	    final int n = 4;
 
@@ -60,6 +60,9 @@ public class Main {
 		
 		long startTest = System.nanoTime();
 
+		// As there are few exemples and levenshtein algorithm is fast, 
+		// comparing the two differents implementations may get untrustable results. 
+		// Therefore i ran the test 10000 times.
 		for(int t=0; t<nTests; t++){
 			for(int i=0; i<n; i++) {
 				solution.levenshtein(tokens1[i], tokens2[i]);
@@ -84,6 +87,9 @@ public class Main {
 		
 		long startTest = System.nanoTime();
 		
+		// As there are few exemples and levenshtein algorithm is fast, 
+		// comparing the two differents implementations may get untrustable results. 
+		// Therefore i ran the test 10000 times.
 		for(int t=0; t<nTests; t++) {
 			for(int i=0; i<n; i++) {
 				solution.levenshtein(tokens1[i], tokens2[i], maxDistance);
